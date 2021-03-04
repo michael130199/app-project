@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar [class.detail__show-background]="showToolbar">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title *ngIf="showToolbarTitle">
+      Details
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen 
+             (ionScroll)="onScroll($event)" 
+             [scrollEvents]="true">
+
+  <ion-slides *ngIf="project"
+              pager="true" 
+              [options]="slideOpts" 
+              class="detail__slides">
+
+    <ion-slide *ngFor="let image of project.urlMultimedia">
+      <img [src]="image.url"/>
+    </ion-slide>
+
+  </ion-slides>
+
+  <ion-grid class="ion-padding">
+
+    <ion-row>
+      <ion-label class="detail__title">{{ project.title }}</ion-label>
+    </ion-row>
+    
+    <ion-row>
+      <ion-label>
+        <div [innerHTML]="project.description">
+
+        </div>
+      </ion-label>
+    </ion-row>
+
+    <ion-row *ngIf="project.urlVideo !== 'empty'">
+      <iframe class="detail_video" 
+              [src]="getVideo(project.urlVideo)" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+  

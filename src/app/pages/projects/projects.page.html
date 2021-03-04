@@ -1,0 +1,23 @@
+<app-header title="Projects"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <app-subheader title="Projects"></app-subheader>
+
+  <ion-card *ngFor="let project of projects"
+    (click)="goToDetail(project)">
+
+    <img [src]="project.urlMultimedia[0].url"/>
+
+    <ion-card-header>
+      <ion-card-subtitle>Projects</ion-card-subtitle>
+      <ion-card-title>{{ project.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="limit-text">
+      {{ project.description }}
+    </ion-card-content>
+
+  </ion-card>
+  
+</ion-content>

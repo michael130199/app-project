@@ -1,0 +1,7 @@
+body {
+  background-color: var(--ion-toolbar-background);
+}
+
+ion-app {
+  margin-top: env(safe-area-inset-top);
+}

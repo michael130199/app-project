@@ -1,0 +1,13 @@
+{
+  "appId": "com.michael.app",
+  "appName": "michaelApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true
+    }
+  },
+  "cordova": {}
+}
